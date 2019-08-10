@@ -26,12 +26,12 @@ seen. The prior uncertainty or prior knowledge is quantified through the
 prior distribution. Bayesian theorem states that the (non-normalized)
 posterior distribution which is used for statistical inference can be
 derived as:
-$$\\Large p(\\theta\|y) \\propto p(y\|\\theta) p(\\theta)$$
+$$\Large p(\\theta\|y) \\propto p(y\|\\theta) p(\\theta)$$
  where
 
-$\\Large p(y\|\\theta)$: Likelihood of the data
+$\Large p(y\|\\theta)$: Likelihood of the data
 
-$\\Large p(\\theta)$: Prior distribution
+$\Large p(\\theta)$: Prior distribution
 
 Thus, Bayes theorem describes how uncertainty on the parameter is
 changed by the information in the data. Bayes theorem holds in the
