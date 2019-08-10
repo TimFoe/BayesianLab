@@ -25,13 +25,11 @@ Bayesian statistics is about updating prior beliefs once some data are
 seen. The prior uncertainty or prior knowledge is quantified through the
 prior distribution. Bayesian theorem states that the (non-normalized)
 posterior distribution which is used for statistical inference can be
-derived as:
-$$\Large p(\\theta\|y) \\propto p(y\|\\theta) p(\\theta)$$
- where
+derived as: $ p(\|y) p(y\|) p()$ where
 
-$\Large p(y\|\\theta)$: Likelihood of the data
+*p*(*y*\|*θ*): Likelihood of the data
 
-$\Large p(\\theta)$: Prior distribution
+*p*(*θ*): Prior distribution
 
 Thus, Bayes theorem describes how uncertainty on the parameter is
 changed by the information in the data. Bayes theorem holds in the
@@ -146,11 +144,11 @@ legend("topright", legend = c("Prior", "Posterior"),
 1.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
     = 0) and P(*θ* &lt; 0.1\|y = 0) for a = b = 1 and a = 2, b = 20.
 
-$$E(\\theta\|y = 0) = \\frac{a\_n}{a\_n+b\_n}$$
+$E(\\theta\|y = 0) = \\frac{a\_n}{a\_n+b\_n}$
 
-$$Mode(\\theta\|y = 0) = \\frac{a\_n-1}{a\_n+b\_n-2} \\text{ for } a\_n, b\_n &gt; 1 $$
+$Mode(\|y = 0) = a\_n, b\_n &gt; 1 $
 
-$$sd(\\theta\|y = 0) = \\sqrt{\\frac{a\_n b\_n}{(a\_n+b\_n+1) (a\_n+b\_n)^2} }$$
+$sd(\\theta\|y = 0) = \\sqrt{\\frac{a\_n b\_n}{(a\_n+b\_n+1) (a\_n+b\_n)^2} }$
 
 ``` r
 n <- 20
@@ -264,9 +262,8 @@ The file “children.RData” contains information of how many pedestrians
 (6-10 years old) were killed or seriously injured in an Austrian city
 over the time of 16 years. As the data are count data we assume that the
 number Y of children killed or seriously injured follows a Poisson
-distribution with parameter *λ*:
-*Y*\|*λ* ∼ *P**o**i**s**s**o**n*(*λ*).
- The conjugate prior for a Poisson likelihood is a Gamma distribution
+distribution with parameter *λ*: *Y*\|*λ* ∼ *P**o**i**s**s**o**n*(*λ*).
+The conjugate prior for a Poisson likelihood is a Gamma distribution
 with hyperparameters a and b 𝒢(*a*<sub>0</sub>, *b*<sub>0</sub>), thus
 use *λ* ∼ 𝒢(*a*<sub>0</sub>, *b*<sub>0</sub>)
 
@@ -299,11 +296,9 @@ The result is again a Gamma distribution with updated parameters
 1.  Plot the prior and the posterior for hyperparameters
     *a*<sub>0</sub> = 1 and *b*<sub>0</sub> = 1.
 
-Prior distribution:
-𝒢(1, 1)
+Prior distribution: 𝒢(1, 1)
 
-Posterior distribution:
-𝒢(1 + *n**ȳ*, 1 + *n*)
+Posterior distribution: 𝒢(1 + *n**ȳ*, 1 + *n*)
 
 HINT: The first column of the data.frame *children* can be extracted by
 data.frame\[,1\]. The mean of a vector can be calculated by the function
@@ -356,12 +351,12 @@ child.after <- children[(struct.break+1) : nrow(children), ]
 If *λ*<sub>1</sub> and *λ*<sub>2</sub> are a priori independent
 
 *p*(*λ*<sub>1</sub>, *λ*<sub>2</sub>) = *p*(*λ*<sub>1</sub>)*p*(*λ*<sub>2</sub>)
- they are also a posteriori independent
+they are also a posteriori independent
 *p*(*λ*<sub>1</sub>, *λ*<sub>2</sub>\|**y**) = *p*(*λ*<sub>1</sub>\|**y**)*p*(*λ*<sub>2</sub>\|**y**)
- and their posteriors
+and their posteriors
 *λ*<sub>1</sub> ∼ 𝒢(*a*<sub>1*n*</sub>, *b*<sub>1*n*</sub>)
-*λ*<sub>2</sub> ∼ 𝒢(*a*<sub>2*n*</sub>, *b*<sub>2*n*</sub>)
- Determine the parameters of the posterior distributions for
+*λ*<sub>2</sub> ∼ 𝒢(*a*<sub>2*n*</sub>, *b*<sub>2*n*</sub>) Determine
+the parameters of the posterior distributions for
 *a*<sub>1</sub> = *a*<sub>2</sub> = *b*<sub>1</sub> = *b*<sub>2</sub> = 1
 and visualize the posterior distributions.
 
@@ -414,8 +409,8 @@ with the goal to make inference on the population mean of the wing
 length.
 
 The measurements are
-1.64, 1.70, 1.72, 1.74, 1.82, 1.82, 1.82, 1.90, 2.08
- A simple stochastic model for these data is that the measurements
+1.64, 1.70, 1.72, 1.74, 1.82, 1.82, 1.82, 1.90, 2.08 A simple stochastic
+model for these data is that the measurements
 *y*<sub>1</sub>, ..., *y*<sub>*n*</sub> are iid.
 *N*(*μ*, *σ*<sup>2</sup>) with unknown population mean *μ* and known
 variance *σ*<sup>2</sup> = 0.13^2 = 0.0169. The goal is to perform a
@@ -428,10 +423,9 @@ RECALL: When *y*<sub>1</sub>, ..., *y*<sub>*n*</sub> iid.
 &gt; 0 the posterior distribution of *μ* is also a Normal distribution
 *N*(*m*<sub>*n*</sub>, *M*<sub>*n*</sub>) with parameters
 *M*<sub>*n*</sub> and *m*<sub>*n*</sub> given as:
-$$M\_n = (\\frac{1}{M\_0} + \\frac{n}{\\sigma^2})^{-1}.$$
- and
-$$m\_n = M\_n  (\\frac{m\_0}{M\_0} + \\frac{n}{\\sigma^2}{\\bar{y}}),$$
- see slide 44.
+$M\_n = (\\frac{1}{M\_0} + \\frac{n}{\\sigma^2})^{-1}.$ and
+$m\_n = M\_n (\\frac{m\_0}{M\_0} + \\frac{n}{\\sigma^2}{\\bar{y}}),$ see
+slide 44.
 
 1.  Compute the posterior mean *m*<sub>*n*</sub> and the posterior
     variance *M*<sub>*n*</sub> of *μ* for *m*<sub>0</sub> = 0 and
@@ -499,17 +493,16 @@ model where both parameters *μ* and *σ*<sup>2</sup> are unknown.
 
 The stochastic model for the 9 measurements is now that
 *y*<sub>*i*</sub> are iid. Normal with unkown parameters *μ* and
-*σ*<sup>2</sup>
-*y*<sub>*i*</sub> iid.  ∼ *N*(*μ*, *σ*<sup>2</sup>)
- RECALL: If both parameters of the Normal distribution *μ* and
+*σ*<sup>2</sup> *y*<sub>*i*</sub> iid.  ∼ *N*(*μ*, *σ*<sup>2</sup>)
+RECALL: If both parameters of the Normal distribution *μ* and
 *σ*<sup>2</sup> are unknown a joint prior on *μ* and *σ*<sup>2</sup> has
 to be specified. A conjugate prior is specified as follows: The prior on
 *μ* conditional on *σ*<sup>2</sup> is Normal,
 *μ*\|*σ*<sup>2</sup> ∼ *N*(*m*<sub>0</sub>, *σ*<sup>2</sup>*M*<sub>0</sub>)
- and the (marginal) prior of *σ*<sup>2</sup> is the inverse Gamma
+and the (marginal) prior of *σ*<sup>2</sup> is the inverse Gamma
 distribution
 *σ*<sup>2</sup> ∼ *G*<sup> − 1</sup>(*ν*<sub>0</sub>/2, *ν*<sub>0</sub>/2 *σ*<sub>0</sub><sup>2</sup>),
- see slide 49.
+see slide 49.
 
 1.  Write a program to sample from the joint prior distribution of *μ*
     and *σ*<sup>2</sup> by sampling from the distributions
@@ -559,8 +552,8 @@ plot(mu.draws, sigma2.draws, xlim = c(-6,6), ylim = c(0,50))
 
 RECALL: Under the conjugate prior for *μ* and *σ*<sup>2</sup> the
 marginal posterior of *σ*<sup>2</sup> is Inverse Gamma
-$$\\sigma^2 \| \\textbf{y} \\sim G^{-1}(\\frac{\\nu\_n}{2}, \\frac{\\nu\_n}{2} \\sigma^2\_n)$$
- and the conditional posterior of *μ* is Normal
+$\\sigma^2 \| \\textbf{y} \\sim G^{-1}(\\frac{\\nu\_n}{2}, \\frac{\\nu\_n}{2} \\sigma^2\_n)$
+and the conditional posterior of *μ* is Normal
 *μ*\|*σ*<sup>2</sup>, **y** ∼ *N*(*m*<sub>*n*</sub>, *M*<sub>*n*</sub>*σ*<sup>2</sup>)
 
 Formulas for the posterior parameters
@@ -700,11 +693,10 @@ data
     ## 12   2.51         1       1  24          24
 
 For the analysis use a semi-conjugate prior
-*p*(**β**, *σ*<sup>2</sup>) = *p*(**β**)*p*(*σ*<sup>2</sup>)
- where
+*p*(**β**, *σ*<sup>2</sup>) = *p*(**β**)*p*(*σ*<sup>2</sup>) where
 
 **β** ∼ *N*<sub>*d*</sub>(**b**<sub>**0**</sub>, **B**<sub>**0**</sub>)
- and
+and
 
 *σ*<sup>2</sup> ∼ *G*<sup> − 1</sup>(*s*<sub>0</sub>, *S*<sub>0</sub>)
 
@@ -901,12 +893,11 @@ risk factors on the diabetic status according to WHO criteria (No, Yes).
 RECALL: The probit model is a regression model where the binary response
 *y*<sub>*i*</sub> of subject is modelled depending on the values of the
 covariates **x**<sub>*i*</sub> as
-*P*(*y*<sub>*i*</sub> = 1) = *Φ*(**x**<sub>*i*</sub>′**β**)
- In a Bayesian probit model the prior distribution of **β** is (usually)
+*P*(*y*<sub>*i*</sub> = 1) = *Φ*(**x**<sub>*i*</sub>′**β**) In a
+Bayesian probit model the prior distribution of **β** is (usually)
 specified as a multivariate Normal distribution
-*β* ∼ *N*(**b**<sub>0</sub>, **B**<sub>0</sub>)
- Posterior inference can be performed by Gibbs sampling with data
-augmentation, see slides 91ff.
+*β* ∼ *N*(**b**<sub>0</sub>, **B**<sub>0</sub>) Posterior inference can
+be performed by Gibbs sampling with data augmentation, see slides 91ff.
 
 1.  Load the data and perform a short descriptive analysis.
 
@@ -1309,11 +1300,10 @@ R-package MASS.
 
 RECALL: For binary observations *y*<sub>*i*</sub> and regressor vector
 **x**<sub>*i*</sub>, *i* = 1, …, *n* the logit model specifies
-*P*(*y*<sub>*i*</sub> = 1) as
-$$ P(y\_i = 1) = \\frac{\\exp(\\mathbf{x}'\_i\\boldsymbol{\\beta})}{1+ \\exp(\\mathbf{x}'\_i\\boldsymbol{\\beta})} $$
- This model for the data is (usually) complemented by the prior
-**β** ∼ *N*(**b**<sub>**0**</sub>, **B**<sub>**0**</sub>)
- and the resulting posterior is not of closed form.
+*P*(*y*<sub>*i*</sub> = 1) as $ P(y\_i = 1) = $ This model for the data
+is (usually) complemented by the prior
+**β** ∼ *N*(**b**<sub>**0**</sub>, **B**<sub>**0**</sub>) and the
+resulting posterior is not of closed form.
 
 For many problems R packages with different functionalities have been
 implemented, also for posterior sampling.
