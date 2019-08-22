@@ -147,7 +147,8 @@ legend("topright", legend = c("Prior", "Posterior"),
 1.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
     = 0) and P(*θ* &lt; 0.1\|y = 0) for a = b = 1 and a = 2, b = 20.
 
-$E(\\theta\|y = 0) = \\frac{a\_n}{a\_n+b\_n}$
+*E*(*θ*\|*y* = 0) = \\frac{a\_n}{a\_n+b\_n}*
+<img src="https://latex.codecogs.com/gif.latex?\frac{a_n}{a_n&space;&plus;&space;b_n}" title="\frac{a_n}{a_n + b_n}" />
 
 $Mode(\|y = 0) = a\_n, b\_n &gt; 1 $
 
