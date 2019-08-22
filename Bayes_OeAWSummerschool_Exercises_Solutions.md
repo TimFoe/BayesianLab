@@ -151,7 +151,7 @@ legend("topright", legend = c("Prior", "Posterior"),
 
 <img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\small&space;Mode(\theta|y&space;=&space;0)&space;=&space;\frac{a_n-1}{a_n&plus;b_n-
 
-<img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;sd(\theta|y&space;=&space;0)&space;=&space;\sqrt{\frac{a_n&space;b_n}{(a_n&plus;b_n&plus;1)&space;(a_n&plus;b_n)^2}&space;}" title="\tiny sd(\theta|y = 0) = \sq
+<img src="https://latex.codecogs.com/gif.latex?\dpi{300}&space;\tiny&space;sd(\theta|y&space;=&space;0)&space;=&space;\sqrt{\frac{a_n&space;b_n}{(a_n&plus;b_n&plus;1)&space;(a_n&plus;b_n)^2}&space;}" title="\tiny sd(\theta|y = 0) = \sqrt{\frac{a_n b_n}{(a_n+b_n+1) (a_n+b_n)^2} }" />
 
 ``` r
 n <- 20
