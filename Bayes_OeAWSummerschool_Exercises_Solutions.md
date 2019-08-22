@@ -147,12 +147,11 @@ legend("topright", legend = c("Prior", "Posterior"),
 1.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
     = 0) and P(*θ* &lt; 0.1\|y = 0) for a = b = 1 and a = 2, b = 20.
 
-*E*(*θ*\|*y* = 0) = \\frac{a\_n}{a\_n+b\_n}*
-<img src="https://latex.codecogs.com/gif.latex?\frac{a_n}{a_n&space;&plus;&space;b_n}" title="\frac{a_n}{a_n + b_n}" />
+<img src="https://latex.codecogs.com/gif.latex?E(\theta|y&space;=&space;0)&space;=&space;\frac{a_n}{a_n&plus;b_n}" title="E(\theta|y = 0) = \frac{a_n}{a_n+b_n}" />
 
-$Mode(\|y = 0) = a\_n, b\_n &gt; 1 $
+<img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\small&space;Mode(\theta|y&space;=&space;0)&space;=&space;\frac{a_n-1}{a_n&plus;b_n-
 
-$sd(\\theta\|y = 0) = \\sqrt{\\frac{a\_n b\_n}{(a\_n+b\_n+1) (a\_n+b\_n)^2} }$
+<img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\tiny&space;sd(\theta|y&space;=&space;0)&space;=&space;\sqrt{\frac{a_n&space;b_n}{(a_n&plus;b_n&plus;1)&space;(a_n&plus;b_n)^2}&space;}" title="\tiny sd(\theta|y = 0) = \sq
 
 ``` r
 n <- 20
