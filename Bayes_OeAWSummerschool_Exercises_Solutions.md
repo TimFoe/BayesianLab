@@ -301,7 +301,7 @@ The result is again a Gamma distribution with updated parameters
 
 Prior distribution: 𝒢(1, 1)
 
-Posterior distribution: 𝒢(1 + *n**ȳ*, 1 + *n*)
+Posterior distribution: 𝒢(1 + n*ȳ*, 1 + *n*)
 
 HINT: The first column of the data.frame *children* can be extracted by
 data.frame\[,1\]. The mean of a vector can be calculated by the function
@@ -426,9 +426,14 @@ RECALL: When *y*<sub>1</sub>, ..., *y*<sub>*n*</sub> iid.
 &gt; 0 the posterior distribution of *μ* is also a Normal distribution
 *N*(*m*<sub>*n*</sub>, *M*<sub>*n*</sub>) with parameters
 *M*<sub>*n*</sub> and *m*<sub>*n*</sub> given as:
-$M\_n = (\\frac{1}{M\_0} + \\frac{n}{\\sigma^2})^{-1}.$ and
-$m\_n = M\_n (\\frac{m\_0}{M\_0} + \\frac{n}{\\sigma^2}{\\bar{y}}),$ see
-slide 44.
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;M_n&space;=&space;(\frac{1}{M_0}&space;&plus;&space;\frac{n}{\sigma^2})^{-1}" title="\small M_n = (\frac{1}{M_0} + \frac{n}{\sigma^2})^{-1}" />
+
+and
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;m_n&space;=&space;M_n&space;(\frac{m_0}{M_0}&space;&plus;&space;\frac{n}{\sigma^2}{\bar{y}})" title="\small m_n = M_n (\frac{m_0}{M_0} + \frac{n}{\sigma^2}{\bar{y}})" />
+
+see slide 44.
 
 1.  Compute the posterior mean *m*<sub>*n*</sub> and the posterior
     variance *M*<sub>*n*</sub> of *μ* for *m*<sub>0</sub> = 0 and
