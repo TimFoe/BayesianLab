@@ -25,11 +25,14 @@ Bayesian statistics is about updating prior beliefs once some data are
 seen. The prior uncertainty or prior knowledge is quantified through the
 prior distribution. Bayesian theorem states that the (non-normalized)
 posterior distribution which is used for statistical inference can be
-derived as: $ p(\|y) p(y\|) p()$ where
+derived as: p(*Θ*|y) p(y|*Θ*) p(*y*) where
 
-*p*(*y*\|*θ*): Likelihood of the data
 
-*p*(*θ*): Prior distribution
+p(*y*|*θ*): Likelihood of the data
+
+
+p(*θ*): Prior distribution
+
 
 Thus, Bayes theorem describes how uncertainty on the parameter is
 changed by the information in the data. Bayes theorem holds in the
