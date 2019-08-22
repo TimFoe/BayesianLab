@@ -147,9 +147,9 @@ legend("topright", legend = c("Prior", "Posterior"),
 1.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
     = 0) and P(*θ* &lt; 0.1\|y = 0) for a = b = 1 and a = 2, b = 20.
 
-<img src="https://latex.codecogs.com/gif.latex?E(\theta|y&space;=&space;0)&space;=&space;\frac{a_n}{a_n&plus;b_n}" title="E(\theta|y = 0) = \frac{a_n}{a_n+b_n}" />
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;E(\theta|y&space;=&space;0)&space;=&space;\frac{a_n}{a_n&plus;b_n}" title="\small E(\theta|y = 0) = \frac{a_n}{a_n+b_n}" />
 
-<img src="https://latex.codecogs.com/png.latex?\dpi{300}&space;\small&space;Mode(\theta|y&space;=&space;0)&space;=&space;\frac{a_n-1}{a_n&plus;b_n-
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;Mode(\theta|y&space;=&space;0)&space;=&space;\frac{a_n-1}{a_n&plus;b_n-2}&space;\text{&space;for&space;}&space;a_n,&space;b_n&space;>&space;1" title="\small Mode(\theta|y = 0) = \frac{a_n-1}{a_n+b_n-2} \text{ for } a_n, b_n > 1" />
 
 <img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;sd(\theta|y&space;=&space;0)&space;=&space;\sqrt{\frac{a_n&space;b_n}{(a_n&plus;b_n&plus;1)&space;(a_n&plus;b_n)^2}&space;}" title="\small sd(\theta|y = 0) = \sqrt{\frac{a_n b_n}{(a_n+b_n+1) (a_n+b_n)^2} }" />
 
