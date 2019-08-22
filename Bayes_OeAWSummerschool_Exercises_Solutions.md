@@ -49,7 +49,7 @@ Suppose we are interested in the prevalence *θ* of a rare disease
 number of infected in the sample (Y\|*θ* ∼ *B**i**N**o**m*(*n*, *θ*)).
 The prior distribution for *θ* is a Beta distribution *B*(*a*, *b*).
 
-1.  Plot the probability function of y for *θ* = 0.02, 0.1, 0.2 and n =
+a.  Plot the probability function of y for *θ* = 0.02, 0.1, 0.2 and n =
     20 (in one plot).
 
 HINTS: The probability mass function of a binomial distribution with
@@ -75,7 +75,7 @@ legend("topright", legend = c("theta = 0.02", "theta = 0.1", "theta = 0.2"),
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-2-1.png)
 
-1.  Plot the prior and posterior distribution of *θ* for n = 20 and y
+b.  Plot the prior and posterior distribution of *θ* for n = 20 and y
     = 0. Consider two scenarios with different hyperparameters (a1 and
     b1 for Scenario 1, a2 and b2 for Scenario 2) for the prior
     distribution of *θ*:
@@ -136,7 +136,7 @@ legend("topright", legend = c("Prior", "Posterior"),
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-3-2.png)
 
-1.  Compare how the hyperparameters of the prior distribution of *θ*
+c.  Compare how the hyperparameters of the prior distribution of *θ*
     influence the posterior distribution.
 
 -   Scenario 1: Flat prior, no prior information on *θ*: Posterior is
@@ -144,7 +144,7 @@ legend("topright", legend = c("Prior", "Posterior"),
 -   Scenario 2: With a = 2 and b = 20, some information of prior
     experiments is provided. Posterior is unimodal.
 
-1.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
+d.  For n = 20 compute *E*(*θ*\|*y* = 0), mode(*θ*\|y = 0), sd(*θ*\|y
     = 0) and P(*θ* &lt; 0.1\|y = 0) for a = b = 1 and a = 2, b = 20.
 
 <img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;E(\theta|y&space;=&space;0)&space;=&space;\frac{a_n}{a_n&plus;b_n}" title="\small E(\theta|y = 0) = \frac{a_n}{a_n+b_n}" />
@@ -194,7 +194,7 @@ post.p <- pbeta(0.1, an, bn) # posterior probability  p(theta < 0.1| Y = 0)
     ##     post.exp post.mode    post.sd    post.p
     ## 1 0.04761905     0.025 0.03247592 0.9260956
 
-1.  Compute an equally tailed and an HPD (highest posterior density)
+e.  Compute an equally tailed and an HPD (highest posterior density)
     95%-credibility interval for the parameter *θ* in the second
     scenario and compare the length of these credibility intervals.
 
@@ -270,7 +270,7 @@ The conjugate prior for a Poisson likelihood is a Gamma distribution
 with hyperparameters a and b 𝒢(*a*<sub>0</sub>, *b*<sub>0</sub>), thus
 use *λ* ∼ 𝒢(*a*<sub>0</sub>, *b*<sub>0</sub>)
 
-1.  Load the data “children.RData” running the command below.
+a.  Load the data “children.RData” running the command below.
 
 ``` r
 load("children.RData")
@@ -290,13 +290,13 @@ children[1:10,] #first 10 rows of the data
     ## 9  1      9    1
     ## 10 5     10    1
 
-1.  Derive the posterior distribution of *λ*.
+b.  Derive the posterior distribution of *λ*.
 
 The result is again a Gamma distribution with updated parameters
 *a*<sub>*n*</sub> = *a*<sub>0</sub> + *n**ȳ* and
 *b*<sub>*n*</sub> = *b*<sub>0</sub> + *n*
 
-1.  Plot the prior and the posterior for hyperparameters
+c.  Plot the prior and the posterior for hyperparameters
     *a*<sub>0</sub> = 1 and *b*<sub>0</sub> = 1.
 
 Prior distribution: 𝒢(1, 1)
@@ -332,7 +332,7 @@ legend("topright", legend = c("Prior", "Posterior"),
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
-1.  In October of the 8th year (from the 94th observation on) a legal
+d.  In October of the 8th year (from the 94th observation on) a legal
     amendment was introduced that gave the priority to pedestrians. In
     order to evaluate if the change of law effected the number of
     seriously injured or killed pedestrians one can assume that:
@@ -402,7 +402,7 @@ legend("topright", legend = c("Before the structural break",
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
-1.  What can you conclude about the effect of the legal amendment?
+e.  What can you conclude about the effect of the legal amendment?
 
 Exercise 3: Midge data - Normal model with known variance
 ---------------------------------------------------------
@@ -435,7 +435,7 @@ and
 
 see slide 44.
 
-1.  Compute the posterior mean *m*<sub>*n*</sub> and the posterior
+a.  Compute the posterior mean *m*<sub>*n*</sub> and the posterior
     variance *M*<sub>*n*</sub> of *μ* for *m*<sub>0</sub> = 0 and
     *M*<sub>0</sub> = 10000.
 
@@ -468,7 +468,7 @@ Mn
 
     ## [1] 0.001877777
 
-1.  Generate a vector mu.draws with 10000 draws from the posterior
+b.  Generate a vector mu.draws with 10000 draws from the posterior
     distribution *N*(*m*<sub>*n*</sub>, *M*<sub>*n*</sub>).
 
 Hint: Use the function rnorm().
@@ -477,7 +477,7 @@ Hint: Use the function rnorm().
 mu.draws <- rnorm(10000, mean = mn, sd = sqrt(Mn))
 ```
 
-1.  Plot the kernel density estimate for the sample of the posterior and
+c.  Plot the kernel density estimate for the sample of the posterior and
     compare it with exact posterior density.
 
 Hint: A kernel density estimate is generated by the function *density()*
@@ -512,7 +512,7 @@ distribution
 *σ*<sup>2</sup> ∼ *G*<sup> − 1</sup>(*ν*<sub>0</sub>/2, *ν*<sub>0</sub>/2 *σ*<sub>0</sub><sup>2</sup>),
 see slide 49.
 
-1.  Write a program to sample from the joint prior distribution of *μ*
+a.  Write a program to sample from the joint prior distribution of *μ*
     and *σ*<sup>2</sup> by sampling from the distributions
     *p*(*μ*\|*σ*<sup>2</sup>) and *p*(*σ*<sup>2</sup>)
 
@@ -554,13 +554,15 @@ plot(mu.draws, sigma2.draws, xlim = c(-6,6), ylim = c(0,50))
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-12-2.png)
 
-1.  Write a program to sample from the posterior distribution by
+b.  Write a program to sample from the posterior distribution by
     sampling *σ*<sup>2</sup> from *p*(*σ*<sup>2</sup>\|**y**) and *μ*
     from *p*(*μ*\|*σ*<sup>2</sup>, **y**).
 
 RECALL: Under the conjugate prior for *μ* and *σ*<sup>2</sup> the
 marginal posterior of *σ*<sup>2</sup> is Inverse Gamma
-$\\sigma^2 \| \\textbf{y} \\sim G^{-1}(\\frac{\\nu\_n}{2}, \\frac{\\nu\_n}{2} \\sigma^2\_n)$
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\small&space;\sigma^2&space;|&space;\textbf{y}&space;\sim&space;G^{-1}(\frac{\nu_n}{2},&space;\frac{\nu_n}{2}&space;\sigma^2_n)" title="\small \sigma^2 | \textbf{y} \sim G^{-1}(\frac{\nu_n}{2}, \frac{\nu_n}{2} \sigma^2_n)" />
+
 and the conditional posterior of *μ* is Normal
 *μ*\|*σ*<sup>2</sup>, **y** ∼ *N*(*m*<sub>*n*</sub>, *M*<sub>*n*</sub>*σ*<sup>2</sup>)
 
@@ -613,7 +615,7 @@ mn <- Mn * (1/M0 * m0 + n * meany)
 mu.draws <- rnorm(M, mean = mn, sd = sqrt(sigma2.draws * Mn))
 ```
 
-1.  Plot the sampled values and compare to the prior distribution.
+c.  Plot the sampled values and compare to the prior distribution.
 
 ``` r
 plot(mu.draws, sigma2.draws, xlab = "mu", ylab = "sigma2")
@@ -621,7 +623,7 @@ plot(mu.draws, sigma2.draws, xlab = "mu", ylab = "sigma2")
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-14-1.png)
 
-1.  Use the draws from the posterior to approximate the posterior mean
+d.  Use the draws from the posterior to approximate the posterior mean
     and variance of the parameters *μ* and *σ*<sup>2</sup>.
 
 ``` r
@@ -648,7 +650,7 @@ var(sigma2.draws)
 
     ## [1] 0.0001109309
 
-1.  Plot the approximation of the marginal posterior of the mean wing
+e.  Plot the approximation of the marginal posterior of the mean wing
     length.
 
 ``` r
@@ -708,7 +710,7 @@ and
 
 *σ*<sup>2</sup> ∼ *G*<sup> − 1</sup>(*s*<sub>0</sub>, *S*<sub>0</sub>)
 
-1.  Start with a descriptive analysis and plot the oxygen uptake versus
+a.  Start with a descriptive analysis and plot the oxygen uptake versus
     age with different colors for the two exercise groups.
 
 ``` r
@@ -722,7 +724,7 @@ legend(30,0,legend = c("aerobic","running"), pch = c(16,16), col = c("gray","bla
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-18-1.png)
 
-1.  Write a program for Gibbs sampling of the parameters in the Bayesian
+b.  Write a program for Gibbs sampling of the parameters in the Bayesian
     linear regression model und the semi-conjugate prior for **β** and
     *σ*<sup>2</sup>.
 
@@ -801,11 +803,11 @@ for(m in 1:M){
 }
 ```
 
-1.  Analyse the posterior draws.
+c.  Analyse the posterior draws.
 
 <!-- -->
 
-1.  Generate a trace plot for each parameter. How many draws should be
+d.  Generate a trace plot for each parameter. How many draws should be
     considered as burnin?
 
 ``` r
@@ -824,7 +826,7 @@ plot(sigma2.draws, type = "l")
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-20-2.png)
 
-1.  Plot of the autocorrelation function for each parameter using the
+e.  Plot of the autocorrelation function for each parameter using the
     draws after burnin and compute the effective sample size.
 
 HINTS:
@@ -866,7 +868,7 @@ data.frame("Intercept" = effectiveSize(beta.draws[keep,1]),
     ##      Intercept Aerobic  Age Interaction   Sigma2
     ## var1      5000    5000 5000        5000 1861.592
 
-1.  Generate a kernel density plot for each parameter (using the draws
+f.  Generate a kernel density plot for each parameter (using the draws
     after burnin).
 
 ``` r
@@ -907,7 +909,7 @@ specified as a multivariate Normal distribution
 *β* ∼ *N*(**b**<sub>0</sub>, **B**<sub>0</sub>) Posterior inference can
 be performed by Gibbs sampling with data augmentation, see slides 91ff.
 
-1.  Load the data and perform a short descriptive analysis.
+a.  Load the data and perform a short descriptive analysis.
 
 HINT: Execute “library(MASS)” if you have not loaded the R-package MASS
 in the current R-session.
@@ -946,7 +948,7 @@ summary(Pima.tr)
     ##  3rd Qu.:36.50   3rd Qu.:0.6160   3rd Qu.:39.25            
     ##  Max.   :47.90   Max.   :2.2880   Max.   :63.00
 
-1.  Prepare the data in “Pima.tr” for the Bayesian probit analysis
+b.  Prepare the data in “Pima.tr” for the Bayesian probit analysis
 
 -   Define the vector of binary responses *y* where *y* = 1, if
     “type=Yes” and *y* = 0 otherwise and determine the number of
@@ -981,7 +983,7 @@ X <- as.matrix(cbind(int, npreg, glu100, bp80, skin23, bmi25, ped025, age20))
 k <- dim(X)[2]
 ```
 
-1.  Write an R program that performs Gibbs sampling with data
+c.  Write an R program that performs Gibbs sampling with data
     augmentation for the Bayesian probit model with prior parameters
     **b**<sub>0</sub> = **0** and **B**<sub>0</sub> = 10000**I**.
 
@@ -992,7 +994,7 @@ HOW TO PROCEED:
     beta.draws to store the draws from the posterior
 -   Load the package “truncnorm” and compute necessary quantities for
     posterior sampling
--   Initialize **b****e****t****a** and create an empty vector **z** for
+-   Initialize beta and create an empty vector **z** for
     the latent utilites
 -   Perform *M* steps of the Gibbs sampler with data augmentation:
     -   Sample the latent utilities from its full conditional
@@ -1053,11 +1055,11 @@ for (m in (1:M)){
 }
 ```
 
-1.  Analysis of the posterior sample.
+d.  Analysis of the posterior sample.
 
 <!-- -->
 
-1.  Generate a trace plot for each parameter. Is a burnin of 2000 draws
+e.  Generate a trace plot for each parameter. Is a burnin of 2000 draws
     sufficient?
 
 ``` r
@@ -1073,7 +1075,7 @@ for(i in 1 : 8) {
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-26-1.png)
 
-4b) Plot of the autocorrelation function for the draws of each parameter
+f) Plot of the autocorrelation function for the draws of each parameter
 (after burnin) and compute the effective sample size.
 
 ``` r
@@ -1096,7 +1098,7 @@ effectiveSize(beta.draws[keep,])
     ##     var1     var2     var3     var4     var5     var6     var7     var8 
     ## 2268.758 4935.413 2851.869 4176.436 3591.294 3758.058 3405.843 4675.991
 
-1.  Keep every 10th draw after burnin for posterior analysis:
+g.  Keep every 10th draw after burnin for posterior analysis:
 
 -   Plot kernel density estimates for the posterior of each regression
     effect.
@@ -1143,7 +1145,7 @@ res
 Exercise 7: Metropolis-Hastings for sampling from a Student-distribution
 ------------------------------------------------------------------------
 
-1.  Write a program to sample from the *t*<sub>3</sub> -distribution
+a.  Write a program to sample from the *t*<sub>3</sub> -distribution
     i.e. the Student-distribution with 3 degrees of freedom using the
     independence MH-sampler with
 
@@ -1215,7 +1217,7 @@ MHsample.t <- function (M, prop.dis, df.t, ystart){
 }
 ```
 
-1.  Generate M=10000 draws and assess the approximation to the
+b.  Generate M=10000 draws and assess the approximation to the
     *t*<sub>3</sub>-distribution.
 
 HINTs:
@@ -1287,7 +1289,7 @@ print(acc.rate)
 
     ## [1] 0.89222 0.81127
 
-1.  Compare the probability for a value larger than 4 of the
+c.  Compare the probability for a value larger than 4 of the
     *t*<sub>3</sub> to the corresponding relative frequency in the
     generated sample.
 
@@ -1449,11 +1451,11 @@ matrix where columns contain the MCMC draws of one parameter.
 beta.draws <- samples[[1]]
 ```
 
-1.  Analyse the posterior draws.
+a.  Analyse the posterior draws.
 
 <!-- -->
 
-1.  Generate a trace plot for each regression effect.
+b.  Generate a trace plot for each regression effect.
 
 ``` r
 beta.draws <- as.data.frame(beta.draws)
@@ -1466,7 +1468,7 @@ for( i in 1 : 8){
 
 ![](Bayes_OeAWSummerschool_Exercises_Solutions_files/figure-markdown_github/unnamed-chunk-38-1.png)
 
-1.  Plot the autocorrelation function of the draws for each regression
+c.  Plot the autocorrelation function of the draws for each regression
     effect and determine the effective sample size.
 
 ``` r
@@ -1518,7 +1520,7 @@ effectiveSize(beta.draws)
     ##   beta[8] 
     ##  885.4267
 
-1.  Fit a (frequentist) Logit model using glm(y\~X-1, family =
+d.  Fit a (frequentist) Logit model using glm(y\~X-1, family =
     binomial()) and compare the results.
 
 ``` r
